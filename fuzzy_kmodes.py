@@ -1,7 +1,7 @@
 import numpy as np
 import random
-from collections import Counter
 import operator
+from collections import Counter
 from time import time
 
 
@@ -110,8 +110,8 @@ def calculate_centroids(W, X, alpha):
         for j in range(m):
             weights = []
             x_j = X[:,j]
-            dom_aj = Counter(x_j)
-            for key in dom_aj:
+            dom_aj = np.unique(x_j)
+            for key in dom_aj.__iter__():
                 indexes = [i for i in range(len(x_j)) if x_j[i] == key]
                 sum = 0
                 for index in indexes:
@@ -178,21 +178,48 @@ def calculate_cluster_allotment(W):
     return allotment
 
 
+def calculate_accuracy(labels, prediction):
+    labels_values = np.unique(labels)
+    count = 0.0
 
-# Importing data from dataset and reformatting into attributes and labels
+    for key in labels_values.__iter__():
+        indices = [prediction[i] for i in range(len(prediction)) if labels[i] == key]
+        count += max(Counter(indices).iteritems(), key=operator.itemgetter(1))[1]
+
+    return round(count / len(prediction), 4) * 100
+
+
+# Importing data from data set and reformatting into attributes and labels
 x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
 y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
 
 f_new, Z, W = fuzzy_kmodes(x, 4, 1.1)
 
+print
+print
 print "Cost: ", f_new
+print
+print
 
 print "Cluster centers:"
 print Z
+print
+print
 
 print "Partition Matrix:"
 print W
+print
+print
 
-# assigned_clusters =
+assigned_clusters = calculate_cluster_allotment(W)
+print "Allotted clusters: "
+compared_results = zip(y, assigned_clusters)
+
+for ii in compared_results:
+    print ii
+
+print
+print
+print "Accuracy:", calculate_accuracy(y, assigned_clusters), "%"
 
 

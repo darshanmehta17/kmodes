@@ -51,6 +51,18 @@ def kmodes(X, n_clusters=8, max_iter=100):
             has_changed = False
     return cluster_centers, belongs_to
 
+
+def calculate_accuracy(labels, prediction):
+    labels_values = np.unique(labels)
+    count = 0.0
+
+    for key in labels_values.__iter__():
+        indices = [prediction[i] for i in range(len(prediction)) if labels[i] == key]
+        count += max(Counter(indices).iteritems(), key=operator.itemgetter(1))[1]
+
+    return round(count / len(prediction), 4) * 100
+
+
 # Importing data from dataset and reformatting into attributes and labels
 x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
 y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
@@ -66,3 +78,5 @@ combo = [(ii,jj) for ii,jj in zip(y,y_test)]
 for x in combo:
     print x
 print "|-------------------------------------------------|"
+
+print "Accuracy:", calculate_accuracy(y, y_test), "%"
