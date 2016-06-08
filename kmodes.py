@@ -53,7 +53,7 @@ def kmodes(X, n_clusters=8, max_iter=100):
 
 # Importing data from dataset and reformatting into attributes and labels
 x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(35,))
+y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
 
 centroids, y_test = kmodes(x, 4, 100)
 

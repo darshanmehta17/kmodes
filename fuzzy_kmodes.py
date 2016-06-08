@@ -164,7 +164,7 @@ def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
 
 # Importing data from dataset and reformatting into attributes and labels
 x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(35,))
+y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
 
 f_new, Z, W = fuzzy_kmodes(x, 4, 1.1)
 
