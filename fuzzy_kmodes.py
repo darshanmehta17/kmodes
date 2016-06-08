@@ -22,7 +22,7 @@ def calculate_dissimilarity(Z, X):
     :param X: Record 2
     :return: Dissimilarity between Z and X
     """
-    m = Z.shape[0]
+    m = len(Z)
 
     dissimlarity = 0
 
@@ -61,7 +61,7 @@ def calculate_partition_matrix(Z, X, alpha):
     :param alpha: Weighing exponent
     :return: Dissimilarity matrix of type Numpy array of dimension k x n.
     """
-    k = Z.shape[0]
+    k = len(Z)
 
     n = X.shape[0]
 
@@ -104,12 +104,12 @@ def calculate_centroids(W, X, alpha):
     k = W.shape[0]
     m = X.shape[1]
 
-    Z = np.full((k,m), 0, dtype="str")
+    Z = [[None] * m for i in range(k)]
 
     for l in range(k):
         for j in range(m):
             weights = []
-            x_j = X[:,j]
+            x_j = X[:, j]
             dom_aj = np.unique(x_j)
             for key in dom_aj.__iter__():
                 indexes = [i for i in range(len(x_j)) if x_j[i] == key]
@@ -190,10 +190,12 @@ def calculate_accuracy(labels, prediction):
 
 
 # Importing data from data set and reformatting into attributes and labels
-x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+# x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+# y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 
-f_new, Z, W = fuzzy_kmodes(x, 4, 1.1)
+f_new, Z, W = fuzzy_kmodes(x, 7, 1.1)
 
 print
 print
@@ -202,7 +204,8 @@ print
 print
 
 print "Cluster centers:"
-print Z
+for center in Z:
+    print center
 print
 print
 

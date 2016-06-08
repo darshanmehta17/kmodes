@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4880a7-dfa8-4863-93d1-c9a6ba985cb8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fuzzy_kmodes.py" afterPath="$PROJECT_DIR$/fuzzy_kmodes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kmodes.py" afterPath="$PROJECT_DIR$/kmodes.py" />
     </list>
     <ignored path="kmodes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,7 +18,8 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/kmodes$kmodes.coverage" NAME="kmodes Coverage Results" MODIFIED="1465411913822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/kmodes$fuzzy_kmodes.coverage" NAME="fuzzy_kmodes Coverage Results" MODIFIED="1465411925836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kmodes$fuzzy_kmodes.coverage" NAME="fuzzy_kmodes Coverage Results" MODIFIED="1465413884838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kmodes$km_zoo.coverage" NAME="km-zoo Coverage Results" MODIFIED="1465412495018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,37 +33,58 @@
       <file leaf-file-name="fuzzy_kmodes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fuzzy_kmodes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="222" column="33" selection-start-line="222" selection-start-column="33" selection-end-line="222" selection-end-column="33" />
+            <state relative-caret-position="402">
+              <caret line="211" column="25" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
               <folding>
                 <element signature="e#152#477#0" expanded="false" />
                 <element signature="e#152#427#1" expanded="false" />
-                <element signature="e#519#883#0" expanded="false" />
+                <element signature="e#519#879#0" expanded="false" />
                 <element signature="e#519#738#1" expanded="false" />
-                <element signature="e#812#858#0" expanded="false" />
-                <element signature="e#926#1410#0" expanded="false" />
-                <element signature="e#926#1212#1" expanded="false" />
-                <element signature="e#1297#1393#0" expanded="false" />
-                <element signature="e#1462#2471#0" expanded="false" />
-                <element signature="e#1462#1751#1" expanded="false" />
-                <element signature="e#1896#2457#0" expanded="false" />
-                <element signature="e#1927#2457#0" expanded="false" />
-                <element signature="e#2056#2457#0" expanded="false" />
-                <element signature="e#2148#2389#0" expanded="false" />
-                <element signature="e#2259#2336#0" expanded="false" />
-                <element signature="e#2516#3338#0" expanded="false" />
-                <element signature="e#2516#2773#1" expanded="false" />
-                <element signature="e#2884#3324#0" expanded="false" />
-                <element signature="e#2915#3324#0" expanded="false" />
-                <element signature="e#3047#3258#0" expanded="false" />
-                <element signature="e#3391#3622#1" expanded="false" />
-                <element signature="e#4592#4903#0" expanded="false" />
-                <element signature="e#4692#4851#0" expanded="false" />
-                <marker date="1465411913000" expanded="false" signature="3386:4192" placeholder="..." />
-                <marker date="1465411913000" expanded="false" signature="3808:4117" placeholder="..." />
-                <marker date="1465411913000" expanded="false" signature="4230:4541" placeholder="..." />
-                <marker date="1465411913000" expanded="false" signature="4235:4388" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+                <element signature="e#808#854#0" expanded="false" />
+                <element signature="e#922#1406#0" expanded="false" />
+                <element signature="e#922#1208#1" expanded="false" />
+                <element signature="e#1293#1389#0" expanded="false" />
+                <element signature="e#1458#2463#0" expanded="false" />
+                <element signature="e#1458#1747#1" expanded="false" />
+                <element signature="e#1888#2449#0" expanded="false" />
+                <element signature="e#1919#2449#0" expanded="false" />
+                <element signature="e#2048#2449#0" expanded="false" />
+                <element signature="e#2140#2381#0" expanded="false" />
+                <element signature="e#2251#2328#0" expanded="false" />
+                <element signature="e#2508#3331#0" expanded="false" />
+                <element signature="e#2508#2765#1" expanded="false" />
+                <element signature="e#3040#3251#0" expanded="false" />
+                <element signature="e#3384#3615#1" expanded="false" />
+                <element signature="e#4585#4896#0" expanded="false" />
+                <element signature="e#4685#4844#0" expanded="false" />
+                <element signature="e#4899#4973#0" expanded="false" />
+                <marker date="1465413872000" expanded="false" signature="3379:4185" placeholder="..." />
+                <marker date="1465413872000" expanded="false" signature="3801:4110" placeholder="..." />
+                <marker date="1465413872000" expanded="false" signature="4223:4534" placeholder="..." />
+                <marker date="1465413872000" expanded="false" signature="4228:4381" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="km-zoo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/km-zoo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="49" column="69" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zoo.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zoo.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,6 +185,24 @@
       <module name="kmodes" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/kmodes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="km-zoo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="kmodes" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/km-zoo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -369,14 +409,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.fuzzy_kmodes" />
       <item index="1" class="java.lang.String" itemvalue="Python.kmodes" />
+      <item index="2" class="java.lang.String" itemvalue="Python.km-zoo" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.fuzzy_kmodes" />
-        <item index="1" class="java.lang.String" itemvalue="Python.kmodes" />
+        <item index="1" class="java.lang.String" itemvalue="Python.km-zoo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.kmodes" />
       </list>
     </recent_temporary>
   </component>
@@ -398,16 +440,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20678514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -427,13 +469,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2536349" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20678514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -463,31 +505,30 @@
           <folding>
             <element signature="e#152#477#0" expanded="false" />
             <element signature="e#152#427#1" expanded="false" />
-            <element signature="e#519#883#0" expanded="false" />
+            <element signature="e#519#879#0" expanded="false" />
             <element signature="e#519#738#1" expanded="false" />
-            <element signature="e#812#858#0" expanded="false" />
-            <element signature="e#926#1410#0" expanded="false" />
-            <element signature="e#926#1212#1" expanded="false" />
-            <element signature="e#1297#1393#0" expanded="false" />
-            <element signature="e#1462#2471#0" expanded="false" />
-            <element signature="e#1462#1751#1" expanded="false" />
-            <element signature="e#1896#2457#0" expanded="false" />
-            <element signature="e#1927#2457#0" expanded="false" />
-            <element signature="e#2056#2457#0" expanded="false" />
-            <element signature="e#2148#2389#0" expanded="false" />
-            <element signature="e#2259#2336#0" expanded="false" />
-            <element signature="e#2516#3338#0" expanded="false" />
-            <element signature="e#2516#2773#1" expanded="false" />
-            <element signature="e#2884#3324#0" expanded="false" />
-            <element signature="e#2915#3324#0" expanded="false" />
-            <element signature="e#3047#3258#0" expanded="false" />
-            <element signature="e#3391#3622#1" expanded="false" />
-            <element signature="e#4592#4903#0" expanded="false" />
-            <element signature="e#4692#4851#0" expanded="false" />
-            <marker date="1465411913000" expanded="false" signature="3386:4192" placeholder="..." />
-            <marker date="1465411913000" expanded="false" signature="3808:4117" placeholder="..." />
-            <marker date="1465411913000" expanded="false" signature="4230:4541" placeholder="..." />
-            <marker date="1465411913000" expanded="false" signature="4235:4388" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <element signature="e#808#854#0" expanded="false" />
+            <element signature="e#922#1406#0" expanded="false" />
+            <element signature="e#922#1208#1" expanded="false" />
+            <element signature="e#1293#1389#0" expanded="false" />
+            <element signature="e#1458#2463#0" expanded="false" />
+            <element signature="e#1458#1747#1" expanded="false" />
+            <element signature="e#1888#2449#0" expanded="false" />
+            <element signature="e#1919#2449#0" expanded="false" />
+            <element signature="e#2048#2449#0" expanded="false" />
+            <element signature="e#2140#2381#0" expanded="false" />
+            <element signature="e#2251#2328#0" expanded="false" />
+            <element signature="e#2508#3331#0" expanded="false" />
+            <element signature="e#2508#2765#1" expanded="false" />
+            <element signature="e#3040#3251#0" expanded="false" />
+            <element signature="e#3384#3615#1" expanded="false" />
+            <element signature="e#4585#4896#0" expanded="false" />
+            <element signature="e#4685#4844#0" expanded="false" />
+            <element signature="e#4899#4973#0" expanded="false" />
+            <marker date="1465413872000" expanded="false" signature="3379:4185" placeholder="..." />
+            <marker date="1465413872000" expanded="false" signature="3801:4110" placeholder="..." />
+            <marker date="1465413872000" expanded="false" signature="4223:4534" placeholder="..." />
+            <marker date="1465413872000" expanded="false" signature="4228:4381" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
@@ -553,38 +594,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zoo.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/km-zoo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="49" column="69" selection-start-line="49" selection-start-column="69" selection-end-line="49" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fuzzy_kmodes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="222" column="33" selection-start-line="222" selection-start-column="33" selection-end-line="222" selection-end-column="33" />
+        <state relative-caret-position="402">
+          <caret line="211" column="25" selection-start-line="211" selection-start-column="25" selection-end-line="211" selection-end-column="25" />
           <folding>
             <element signature="e#152#477#0" expanded="false" />
             <element signature="e#152#427#1" expanded="false" />
-            <element signature="e#519#883#0" expanded="false" />
+            <element signature="e#519#879#0" expanded="false" />
             <element signature="e#519#738#1" expanded="false" />
-            <element signature="e#812#858#0" expanded="false" />
-            <element signature="e#926#1410#0" expanded="false" />
-            <element signature="e#926#1212#1" expanded="false" />
-            <element signature="e#1297#1393#0" expanded="false" />
-            <element signature="e#1462#2471#0" expanded="false" />
-            <element signature="e#1462#1751#1" expanded="false" />
-            <element signature="e#1896#2457#0" expanded="false" />
-            <element signature="e#1927#2457#0" expanded="false" />
-            <element signature="e#2056#2457#0" expanded="false" />
-            <element signature="e#2148#2389#0" expanded="false" />
-            <element signature="e#2259#2336#0" expanded="false" />
-            <element signature="e#2516#3338#0" expanded="false" />
-            <element signature="e#2516#2773#1" expanded="false" />
-            <element signature="e#2884#3324#0" expanded="false" />
-            <element signature="e#2915#3324#0" expanded="false" />
-            <element signature="e#3047#3258#0" expanded="false" />
-            <element signature="e#3391#3622#1" expanded="false" />
-            <element signature="e#4592#4903#0" expanded="false" />
-            <element signature="e#4692#4851#0" expanded="false" />
-            <marker date="1465411913000" expanded="false" signature="3386:4192" placeholder="..." />
-            <marker date="1465411913000" expanded="false" signature="3808:4117" placeholder="..." />
-            <marker date="1465411913000" expanded="false" signature="4230:4541" placeholder="..." />
-            <marker date="1465411913000" expanded="false" signature="4235:4388" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <element signature="e#808#854#0" expanded="false" />
+            <element signature="e#922#1406#0" expanded="false" />
+            <element signature="e#922#1208#1" expanded="false" />
+            <element signature="e#1293#1389#0" expanded="false" />
+            <element signature="e#1458#2463#0" expanded="false" />
+            <element signature="e#1458#1747#1" expanded="false" />
+            <element signature="e#1888#2449#0" expanded="false" />
+            <element signature="e#1919#2449#0" expanded="false" />
+            <element signature="e#2048#2449#0" expanded="false" />
+            <element signature="e#2140#2381#0" expanded="false" />
+            <element signature="e#2251#2328#0" expanded="false" />
+            <element signature="e#2508#3331#0" expanded="false" />
+            <element signature="e#2508#2765#1" expanded="false" />
+            <element signature="e#3040#3251#0" expanded="false" />
+            <element signature="e#3384#3615#1" expanded="false" />
+            <element signature="e#4585#4896#0" expanded="false" />
+            <element signature="e#4685#4844#0" expanded="false" />
+            <element signature="e#4899#4973#0" expanded="false" />
+            <marker date="1465413872000" expanded="false" signature="3379:4185" placeholder="..." />
+            <marker date="1465413872000" expanded="false" signature="3801:4110" placeholder="..." />
+            <marker date="1465413872000" expanded="false" signature="4223:4534" placeholder="..." />
+            <marker date="1465413872000" expanded="false" signature="4228:4381" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
           </folding>
         </state>
       </provider>
