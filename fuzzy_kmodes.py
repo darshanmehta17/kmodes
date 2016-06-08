@@ -92,6 +92,40 @@ def calculate_partition_matrix(Z, X, alpha):
     return W
 
 
-def fuzzy_kmodes(X, n_clusters=4):
+def calculate_centroids(W, X, alpha):
+    """
+    Calculates the updated value of Z as per Theorem 4 of paper by Huang '99 on fuzzy kmodes.
+    :param W: Partition matrix
+    :param X: Dataset
+    :param alpha: Weighing exponent
+    :return: Updated centroid Numpy matrix of dimension k x n.
+    """
+    k = W.shape[0]
+    m = X.shape[1]
+
+    Z = np.full((k,m), 0, dtype="str")
+
+    for l in range(k):
+        for j in range(m):
+            weights = []
+            x_j = X[:,j]
+            dom_aj = Counter(x_j)
+            for key in dom_aj:
+                indexes = [i for i in range(len(x_j)) if x_j[i] == key]
+                sum = 0
+                for index in indexes:
+                    sum += pow(W[l][index], alpha)
+                weights.append((key, sum))
+            Z[l][j] = max(weights, key=operator.itemgetter(1))[0]
+
+    return Z
+
+
+def fuzzy_kmodes(X, n_clusters=4, alpha=1):
     Z = initialize_centroids(X, n_clusters)
+
+    W = calculate_partition_matrix(Z, X, alpha)
+
+    f_old = calculate_cost(W, Z, alpha)
+
 

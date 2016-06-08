@@ -27,8 +27,8 @@
       <file leaf-file-name="fuzzy_kmodes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fuzzy_kmodes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
               <folding>
                 <element signature="e#130#455#0" expanded="false" />
                 <element signature="e#130#405#1" expanded="false" />
@@ -38,14 +38,15 @@
                 <element signature="e#901#1385#0" expanded="false" />
                 <element signature="e#901#1187#1" expanded="false" />
                 <element signature="e#1272#1368#0" expanded="false" />
-                <element signature="e#1437#2446#0" expanded="false" />
                 <element signature="e#1437#1726#1" expanded="false" />
                 <element signature="e#1871#2432#0" expanded="false" />
                 <element signature="e#1902#2432#0" expanded="false" />
                 <element signature="e#2031#2432#0" expanded="false" />
                 <element signature="e#2123#2364#0" expanded="false" />
                 <element signature="e#2234#2311#0" expanded="false" />
-                <element signature="e#2488#2527#0" expanded="false" />
+                <element signature="e#2491#3300#0" expanded="false" />
+                <marker date="1465388845000" expanded="false" signature="1432:2446" placeholder="..." />
+                <marker date="1465388845000" expanded="false" signature="3346:3480" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -54,8 +55,8 @@
       <file leaf-file-name="kmodes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kmodes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="48" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="345">
+              <caret line="23" column="85" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="85" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -189,8 +190,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/kmodes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="48" />
+        <state relative-caret-position="345">
+          <caret line="23" column="85" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="85" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -199,8 +200,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fuzzy_kmodes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
           <folding>
             <element signature="e#130#455#0" expanded="false" />
             <element signature="e#130#405#1" expanded="false" />
@@ -210,14 +211,15 @@
             <element signature="e#901#1385#0" expanded="false" />
             <element signature="e#901#1187#1" expanded="false" />
             <element signature="e#1272#1368#0" expanded="false" />
-            <element signature="e#1437#2446#0" expanded="false" />
             <element signature="e#1437#1726#1" expanded="false" />
             <element signature="e#1871#2432#0" expanded="false" />
             <element signature="e#1902#2432#0" expanded="false" />
             <element signature="e#2031#2432#0" expanded="false" />
             <element signature="e#2123#2364#0" expanded="false" />
             <element signature="e#2234#2311#0" expanded="false" />
-            <element signature="e#2488#2527#0" expanded="false" />
+            <element signature="e#2491#3300#0" expanded="false" />
+            <marker date="1465388845000" expanded="false" signature="1432:2446" placeholder="..." />
+            <marker date="1465388845000" expanded="false" signature="3346:3480" placeholder="..." />
           </folding>
         </state>
       </provider>
