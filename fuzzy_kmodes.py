@@ -162,6 +162,23 @@ def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
     return f_new, Z, W
 
 
+def calculate_cluster_allotment(W):
+    """
+    Calculates the membership of each point to various clusters.
+    :param W: Partition matrix
+    :return: allotment array of dimension 1xn
+    """
+    n = W.shape[1]
+
+    allotment = np.zeros(n, dtype='int')
+
+    for i in range(n):
+        allotment[i] = np.argmax(W[:, i]) + 1
+
+    return allotment
+
+
+
 # Importing data from dataset and reformatting into attributes and labels
 x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
 y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
@@ -175,5 +192,7 @@ print Z
 
 print "Partition Matrix:"
 print W
+
+# assigned_clusters =
 
 
