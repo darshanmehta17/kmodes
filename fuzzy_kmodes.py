@@ -32,7 +32,7 @@ def calculate_dissimilarity(Z, X):
     return dissimlarity
 
 
-def calculate_cost(W, Z, alpha):
+def calculate_cost(W, Z, X, alpha):
     """
     Calculates the cost function of k-modes algorithm as per Huang '99 paper on fuzzy k-modes.
     :param W: Fuzzy partition matrix
@@ -121,11 +121,55 @@ def calculate_centroids(W, X, alpha):
     return Z
 
 
-def fuzzy_kmodes(X, n_clusters=4, alpha=1):
+def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
+    """
+    Calculates the optimal cost, cluster centers and fuzzy partition matrix for the given dataset.
+    :param X: Dataset
+    :param n_clusters: number of clusters to form
+    :param alpha: Weighing exponent
+    :return:
+    """
     Z = initialize_centroids(X, n_clusters)
 
     W = calculate_partition_matrix(Z, X, alpha)
 
-    f_old = calculate_cost(W, Z, alpha)
+    f_old = calculate_cost(W, Z, X, alpha)
+
+    f_new = 0
+
+    while True:
+        Z = calculate_centroids(W, X, alpha)
+
+        f_new = calculate_cost(W, Z, X, alpha)
+
+        if f_new == f_old:
+            break
+
+        f_old = f_new
+
+        W = calculate_partition_matrix(Z, X, alpha)
+
+        f_new = calculate_cost(W, Z, X, alpha)
+
+        if f_new == f_old:
+            break
+
+    return f_new, Z, W
+
+
+# Importing data from dataset and reformatting into attributes and labels
+x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(35,))
+
+f_new, Z, W = fuzzy_kmodes(x, 4, 1.1)
+
+print "Cost: ", f_new
+
+print "Cluster centers:"
+print Z
+
+print "Partition Matrix:"
+print W
+
 
 
