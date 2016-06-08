@@ -2,6 +2,7 @@ import numpy as np
 import random
 from collections import Counter
 import operator
+from time import time
 
 
 def initialize_centroids(X, n_clusters=4):
@@ -129,6 +130,8 @@ def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
     :param alpha: Weighing exponent
     :return:
     """
+    t0 = time()
+
     Z = initialize_centroids(X, n_clusters)
 
     W = calculate_partition_matrix(Z, X, alpha)
@@ -154,6 +157,8 @@ def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
         if f_new == f_old:
             break
 
+    print "Time required:", round(time() - t0, 3)
+
     return f_new, Z, W
 
 
@@ -170,6 +175,5 @@ print Z
 
 print "Partition Matrix:"
 print W
-
 
 
