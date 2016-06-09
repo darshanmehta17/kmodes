@@ -207,9 +207,15 @@ accuracy = []
 # Number of iterations
 n_iter = 100
 
+# Number of clusters
+n_clusters = 4
+
+# Weighing exponent
+alpha = 1.1
+
 
 for ii in range(n_iter):
-    comp_time_temp, f_new, Z, W, acc = fuzzy_kmodes(x, y, 4, 1.1)
+    comp_time_temp, f_new, Z, W, acc = fuzzy_kmodes(x, y, n_clusters, alpha)
     comp_time.append(comp_time_temp)
     cost.append(f_new)
     accuracy.append(acc)
