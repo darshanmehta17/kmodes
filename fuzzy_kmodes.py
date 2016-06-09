@@ -122,7 +122,7 @@ def calculate_centroids(W, X, alpha):
     return Z
 
 
-def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
+def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
     """
     Calculates the optimal cost, cluster centers and fuzzy partition matrix for the given dataset.
     :param X: Dataset
@@ -157,9 +157,13 @@ def fuzzy_kmodes(X, n_clusters=4, alpha=1.0):
         if f_new == f_old:
             break
 
-    print "Time required:", round(time() - t0, 3)
+    assigned_clusters = calculate_cluster_allotment(W)
 
-    return f_new, Z, W
+    t1 = round(time() - t0, 3)
+
+    accuracy = calculate_accuracy(Y, assigned_clusters)
+
+    return t1, f_new, Z, W, accuracy
 
 
 def calculate_cluster_allotment(W):
@@ -190,39 +194,29 @@ def calculate_accuracy(labels, prediction):
 
 
 # Importing data from data set and reformatting into attributes and labels
-# x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-# y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
-x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
-y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
+x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+# x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+# y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 
-f_new, Z, W = fuzzy_kmodes(x, 7, 1.1)
 
-print
-print
-print "Cost: ", f_new
-print
-print
+comp_time = []
+cost = []
+accuracy = []
 
-print "Cluster centers:"
-for center in Z:
-    print center
-print
-print
+# Number of iterations
+n_iter = 100
 
-print "Partition Matrix:"
-print W
-print
-print
 
-assigned_clusters = calculate_cluster_allotment(W)
-print "Allotted clusters: "
-compared_results = zip(y, assigned_clusters)
+for ii in range(n_iter):
+    comp_time_temp, f_new, Z, W, acc = fuzzy_kmodes(x, y, 4, 1.1)
+    comp_time.append(comp_time_temp)
+    cost.append(f_new)
+    accuracy.append(acc)
 
-for ii in compared_results:
-    print ii
-
+print "Average time:", sum(comp_time) / len(comp_time)
 print
+print "Average Cost:", sum(cost) / len(cost)
 print
-print "Accuracy:", calculate_accuracy(y, assigned_clusters), "%"
-
+print "Average Accuracy:", sum(accuracy) / len(accuracy)
 
