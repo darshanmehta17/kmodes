@@ -90,7 +90,16 @@ def calculate_partition_matrix(Z, X, alpha):
                 if not flag:
                     W[l][i] = 1 / sum
 
-    return W
+    W_ = (3 * W) / (1 + 2 * W)
+
+    # print "W:"
+    # print W
+    # print
+    # print
+    # print "W':"
+    # print W_
+
+    return W_
 
 
 def calculate_centroids(W, X, alpha):
@@ -206,6 +215,7 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     cost = []
     accuracy = []
 
+
     for ii in range(n_iter):
         comp_time_temp, f_new, Z, W, acc = fuzzy_kmodes(x, y, n_clusters, alpha)
         comp_time.append(comp_time_temp)
@@ -217,7 +227,6 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     avg_accuracy = sum(accuracy) / len(accuracy)
 
     return avg_time, avg_cost, avg_accuracy
-
 
 # Number of iterations
 n_iter = 100
@@ -235,5 +244,3 @@ print
 print "Average Cost:", avg_cost
 print
 print "Average Accuracy:", avg_accuracy
-
-
