@@ -228,19 +228,22 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
 
     return avg_time, avg_cost, avg_accuracy
 
-# Number of iterations
-n_iter = 100
 
-# Number of clusters
-n_clusters = 4
+if __name__ == "__main__":
 
-# Weighing exponent
-alpha = 5.5
+    # Number of iterations
+    n_iter = 100
 
-avg_time, avg_cost, avg_accuracy = run(n_iter, n_clusters, alpha)
+    # Number of clusters
+    n_clusters = 4
 
-print "Average time:", avg_time
-print
-print "Average Cost:", avg_cost
-print
-print "Average Accuracy:", avg_accuracy
+    # Weighing exponent
+    alpha = 5.5
+
+    avg_time, avg_cost, avg_accuracy = run(n_iter, n_clusters, alpha)
+
+    print "Average time:", avg_time
+    print
+    print "Average Cost:", avg_cost
+    print
+    print "Average Accuracy:", avg_accuracy
