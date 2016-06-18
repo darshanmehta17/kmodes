@@ -25,13 +25,14 @@ def update_centroids(X, belongs, centroids):
     return centroids
 
 
-def kmodes(X, n_clusters=8, max_iter=100):
+def kmodes(X, n_clusters=8, max_iter=100, debug=True):
 
     # Chooses random cluster centers
     cluster_centers = np.array(random.sample(X, n_clusters))
-    print "Initial centroids:"
-    print cluster_centers
-    print "|-----------------------------------|"
+    if debug:
+        print "Initial centroids:"
+        print cluster_centers
+        print "|-----------------------------------|"
 
     n_points = X.shape[0]
     belongs_to = np.full(n_points, 0, dtype='int')
@@ -62,21 +63,21 @@ def calculate_accuracy(labels, prediction):
 
     return round(count / len(prediction), 4) * 100
 
+if __name__ == "__main__":
+    # Importing data from dataset and reformatting into attributes and labels
+    x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+    y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
 
-# Importing data from dataset and reformatting into attributes and labels
-x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+    centroids, y_test = kmodes(x, 4, 100)
 
-centroids, y_test = kmodes(x, 4, 100)
+    print "|-------------------------------------------------|"
+    print "Centroids:"
+    print centroids
+    print "|-------------------------------------------------|"
+    print "Y train:Y test"
+    combo = [(ii,jj) for ii,jj in zip(y,y_test)]
+    for x in combo:
+        print x
+    print "|-------------------------------------------------|"
 
-print "|-------------------------------------------------|"
-print "Centroids:"
-print centroids
-print "|-------------------------------------------------|"
-print "Y train:Y test"
-combo = [(ii,jj) for ii,jj in zip(y,y_test)]
-for x in combo:
-    print x
-print "|-------------------------------------------------|"
-
-print "Accuracy:", calculate_accuracy(y, y_test), "%"
+    print "Accuracy:", calculate_accuracy(y, y_test), "%"

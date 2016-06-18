@@ -1,18 +1,21 @@
 import numpy as np
-import random
 import operator
 from collections import Counter
 from time import time
+import kmodes as km
 
 
 def initialize_centroids(X, n_clusters=4):
     """
-    Performs selection of initial centroids (Random as of now)
+    Performs selection of initial centroids (From kmodes as of now)
     :param X: The dataset of points to choose from
     :param n_clusters: number of initial points to choose and return
     :return: n_clusters initial points selected from X as per the algorithm used
     """
-    return np.array(random.sample(X, n_clusters))
+
+    centroids, belongs_to = km.kmodes(X, n_clusters, debug=False)
+
+    return centroids
 
 
 def calculate_dissimilarity(Z, X):
