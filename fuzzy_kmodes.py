@@ -122,6 +122,44 @@ def calculate_centroids(W, X, alpha):
     return Z
 
 
+def calculate_db_index(X, Y, Z, W):
+    k = Z.__len__()
+
+    # Average distance between each point in the i-th cluster
+    dist_i = []
+
+    for ii in range(k):
+        centroid = Z[ii]
+        points = [X[i] for i in range(len(Y)) if Y[i] - 1 == ii]
+        if len(points) == 0:
+            print ii
+        distance = 0
+        for jj in points:
+            distance += calculate_dissimilarity(centroid, jj)
+        dist_i.append(round(distance * 1.0 / len(points), 4))
+
+    D_ij = []
+
+    for ii in range(k):
+        D_i = []
+        for jj in range(k):
+            if ii == jj:
+                D_i.append(0)
+            else:
+                D_i .append(round((dist_i[ii] + dist_i[jj]) * 1.0 / calculate_dissimilarity(Z[ii], Z[jj]), 4))
+        D_ij.append(D_i)
+
+    db_index = 0
+
+    for ii in range(k):
+        db_index += max(D_ij[ii])
+
+    db_index *= 1.0
+    db_index /= k
+
+    return db_index
+
+
 def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
     """
     Calculates the optimal cost, cluster centers and fuzzy partition matrix for the given dataset.
@@ -134,6 +172,8 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
 
     Z = initialize_centroids(X, n_clusters)
 
+    init = [Z]
+
     W = calculate_partition_matrix(Z, X, alpha)
 
     f_old = calculate_cost(W, Z, X, alpha)
@@ -142,6 +182,8 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
 
     while True:
         Z = calculate_centroids(W, X, alpha)
+
+        init.append(Z)
 
         f_new = calculate_cost(W, Z, X, alpha)
 
@@ -163,7 +205,9 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
 
     accuracy = calculate_accuracy(Y, assigned_clusters)
 
-    return t1, f_new, Z, W, accuracy
+    db_index = calculate_db_index(X, assigned_clusters, Z, W)
+
+    return t1, f_new, Z, W, accuracy, db_index
 
 
 def calculate_cluster_allotment(W):
@@ -178,6 +222,11 @@ def calculate_cluster_allotment(W):
 
     for i in range(n):
         allotment[i] = np.argmax(W[:, i]) + 1
+
+    # for ii in range(7):
+    #     if ii - 1 not in allotment:
+    #         print W
+    #         print allotment
 
     return allotment
 
@@ -196,43 +245,49 @@ def calculate_accuracy(labels, prediction):
 def run(n_iter=100, n_clusters=4, alpha=1.1):
 
     # Importing data from data set and reformatting into attributes and labels
-    x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-    y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
-    # x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
-    # y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
-
+    # x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+    # y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+    x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+    y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 
     comp_time = []
     cost = []
     accuracy = []
+    db_indexes = []
 
     for ii in range(n_iter):
-        comp_time_temp, f_new, Z, W, acc = fuzzy_kmodes(x, y, n_clusters, alpha)
+        comp_time_temp, f_new, Z, W, acc, db_index = fuzzy_kmodes(x, y, n_clusters, alpha)
         comp_time.append(comp_time_temp)
         cost.append(f_new)
         accuracy.append(acc)
+        db_indexes.append(db_index)
 
     avg_time = sum(comp_time) / len(comp_time)
     avg_cost = sum(cost) / len(cost)
     avg_accuracy = sum(accuracy) / len(accuracy)
 
-    return avg_time, avg_cost, avg_accuracy
-
+    return avg_time, avg_cost, avg_accuracy,db_indexes
 
 if __name__ == "__main__":
     # Number of iterations
     n_iter = 100
 
     # Number of clusters
-    n_clusters = 4
+    n_clusters = 7
 
     # Weighing exponent
-    alpha = 5.5
+    alpha = 1.1
 
-    avg_time, avg_cost, avg_accuracy = run(n_iter, n_clusters, alpha)
+    avg_time, avg_cost, avg_accuracy,db_indexes = run(n_iter, n_clusters, alpha)
 
     print "Average time:", avg_time
     print
     print "Average Cost:", avg_cost
     print
     print "Average Accuracy:", avg_accuracy
+    print
+    print "Best DB Index:", min(db_indexes)
+    print
+    print "Average DB Index:", sum(db_indexes) / len(db_indexes)
+    print
+    print "DB Indexes:", db_indexes

@@ -3,7 +3,7 @@ import intuition_yager
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.arange(1.1, 10, 0.2)
+x = np.arange(1.1, 7, 0.2)
 
 y_fuzzy = np.zeros((x.shape[0]), dtype='float')
 
@@ -13,7 +13,7 @@ y_intuitionistic = np.zeros((x.shape[0]), dtype='float')
 n_iter = 100
 
 # Number of clusters
-n_clusters = 4
+n_clusters = 7
 
 for i in range(len(x)):
     print "Iteration:", i + 1
