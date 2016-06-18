@@ -125,7 +125,7 @@ def calculate_centroids(W, X, alpha):
     return Z
 
 
-def calculate_db_index(X, Y, Z, W):
+def calculate_db_index(X, Y, Z):
     k = Z.__len__()
 
     # Average distance between each point in the i-th cluster
@@ -134,12 +134,15 @@ def calculate_db_index(X, Y, Z, W):
     for ii in range(k):
         centroid = Z[ii]
         points = [X[i] for i in range(len(Y)) if Y[i] - 1 == ii]
-        if len(points) == 0:
-            print ii
         distance = 0
+
         for jj in points:
             distance += calculate_dissimilarity(centroid, jj)
-        dist_i.append(round(distance * 1.0 / len(points), 4))
+
+        if len(points) == 0:
+            dist_i.append(0.0)
+        else:
+            dist_i.append(round(distance * 1.0 / len(points), 4))
 
     D_ij = []
 
@@ -208,7 +211,7 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
 
     accuracy = calculate_accuracy(Y, assigned_clusters)
 
-    db_index = calculate_db_index(X, assigned_clusters, Z, W)
+    db_index = calculate_db_index(X, assigned_clusters, Z)
 
     return t1, f_new, Z, W, accuracy, db_index
 

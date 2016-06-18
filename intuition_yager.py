@@ -147,16 +147,13 @@ def calculate_db_index(X, Y, Z):
         points = [X[i] for i in range(len(Y)) if Y[i] - 1 == ii]
         distance = 0
 
-        # Test stuff
-        if points.__len__() == 0:
-            print "Found!"
-            for jj in range(X.shape[0]):
-                if calculate_dissimilarity(X[jj], centroid) == 0:
-                    print X[jj], "is allotted to cluster:", Y[jj] - 1, "instead of", ii
-
         for jj in points:
             distance += calculate_dissimilarity(centroid, jj)
-        dist_i.append(distance * 1.0 / len(points))
+            
+        if len(points) == 0:
+            dist_i.append(0.0)
+        else:
+            dist_i.append(round(distance * 1.0 / len(points), 4))
 
     D_ij = []
 
