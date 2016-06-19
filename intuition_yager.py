@@ -149,7 +149,7 @@ def calculate_db_index(X, Y, Z):
 
         for jj in points:
             distance += calculate_dissimilarity(centroid, jj)
-            
+
         if len(points) == 0:
             dist_i.append(0.0)
         else:
@@ -160,8 +160,8 @@ def calculate_db_index(X, Y, Z):
     for ii in range(k):
         D_i = []
         for jj in range(k):
-            if ii == jj:
-                D_i.append(0)
+            if ii == jj or calculate_dissimilarity(Z[ii], Z[jj]) == 0:
+                D_i.append(0.0)
             else:
                 D_i .append((dist_i[ii] + dist_i[jj]) * 1.0 / calculate_dissimilarity(Z[ii], Z[jj]))
         D_ij.append(D_i)
@@ -262,7 +262,6 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     cost = []
     accuracy = []
     db_indexes = []
-
 
     for ii in range(n_iter):
         comp_time_temp, f_new, Z, W, acc, db_index = fuzzy_kmodes(x, y, n_clusters, alpha)

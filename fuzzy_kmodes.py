@@ -149,8 +149,8 @@ def calculate_db_index(X, Y, Z):
     for ii in range(k):
         D_i = []
         for jj in range(k):
-            if ii == jj:
-                D_i.append(0)
+            if ii == jj or calculate_dissimilarity(Z[ii], Z[jj]) == 0:
+                D_i.append(0.0)
             else:
                 D_i .append(round((dist_i[ii] + dist_i[jj]) * 1.0 / calculate_dissimilarity(Z[ii], Z[jj]), 4))
         D_ij.append(D_i)
@@ -272,7 +272,7 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     avg_cost = sum(cost) / len(cost)
     avg_accuracy = sum(accuracy) / len(accuracy)
 
-    return avg_time, avg_cost, avg_accuracy,db_indexes
+    return avg_time, avg_cost, avg_accuracy, db_indexes
 
 if __name__ == "__main__":
     # Number of iterations
