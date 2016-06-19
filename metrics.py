@@ -1,3 +1,5 @@
+import copy
+
 
 def calculate_dissimilarity(Z, X):
     """
@@ -55,3 +57,31 @@ def calculate_db_index(X, Y, Z):
     db_index /= k
 
     return db_index
+
+
+def calculate_dunn_index(X, Y, Z):
+    k = Z.__len__()
+
+    mean_distance_i = []
+
+    for ii in range(k):
+        centroid = copy.copy(Z[ii])
+        points = [X[i] for i in range(len(Y)) if Y[i] - 1 == ii]
+
+        if len(points) == 0:
+            mean_distance_i.append(0.0)
+        else:
+            distance = 0
+            for jj in points:
+                distance += calculate_dissimilarity(centroid, jj)
+            mean_distance_i.append(round(distance * 1.0 / len(points), 4))
+
+    distance_ij = []
+
+    for ii in range(k):
+        for jj in range(ii+1, k):
+            distance_ij.append(calculate_dissimilarity(Z[ii], Z[jj]))
+
+    dunn_index = min(distance_ij) * 1.0 / max(mean_distance_i)
+
+    return dunn_index

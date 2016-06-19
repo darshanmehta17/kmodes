@@ -4,7 +4,7 @@ from collections import Counter
 from time import time
 import kmodes as km
 import random
-from metrics import calculate_db_index
+from metrics import calculate_db_index, calculate_dunn_index
 
 
 def initialize_centroids(X, n_clusters=4):
@@ -175,7 +175,9 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
 
     db_index = calculate_db_index(X, assigned_clusters, Z)
 
-    return t1, f_new, Z, W, accuracy, db_index
+    dunn_index = calculate_dunn_index(X, assigned_clusters, Z)
+
+    return t1, f_new, Z, W, accuracy, db_index, dunn_index
 
 
 def calculate_cluster_allotment(W):
@@ -222,19 +224,22 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     cost = []
     accuracy = []
     db_indexes = []
+    dunn_indexes = []
 
     for ii in range(n_iter):
-        comp_time_temp, f_new, Z, W, acc, db_index = fuzzy_kmodes(x, y, n_clusters, alpha)
+        comp_time_temp, f_new, Z, W, acc, db_index, dunn_index = fuzzy_kmodes(x, y, n_clusters, alpha)
         comp_time.append(comp_time_temp)
         cost.append(f_new)
         accuracy.append(acc)
         db_indexes.append(db_index)
+        dunn_indexes.append(dunn_index)
 
     avg_time = sum(comp_time) / len(comp_time)
     avg_cost = sum(cost) / len(cost)
     avg_accuracy = sum(accuracy) / len(accuracy)
 
-    return avg_time, avg_cost, avg_accuracy, db_indexes
+    return avg_time, avg_cost, avg_accuracy, db_indexes, dunn_indexes
+
 
 if __name__ == "__main__":
     # Number of iterations
@@ -246,7 +251,7 @@ if __name__ == "__main__":
     # Weighing exponent
     alpha = 1.1
 
-    avg_time, avg_cost, avg_accuracy,db_indexes = run(n_iter, n_clusters, alpha)
+    avg_time, avg_cost, avg_accuracy,db_indexes, dunn_indexes = run(n_iter, n_clusters, alpha)
 
     print "Average time:", avg_time
     print
@@ -259,3 +264,9 @@ if __name__ == "__main__":
     print "Average DB Index:", sum(db_indexes) / len(db_indexes)
     print
     print "DB Indexes:", db_indexes
+    print
+    print "Best Dunn Index:", max(dunn_indexes)
+    print
+    print "Average Dunn Index:", sum(dunn_indexes) / len(dunn_indexes)
+    print
+    print "Dunn Indexes:", dunn_indexes
