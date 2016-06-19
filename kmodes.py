@@ -2,6 +2,17 @@ import numpy as np
 import random
 from collections import Counter
 import operator
+import copy
+
+
+def initialize_centroids(X, n_clusters=4):
+    """
+    Performs selection of initial centroids (random as of now)
+    :param X: The dataset of points to choose from
+    :param n_clusters: number of initial points to choose and return
+    :return: n_clusters initial points selected from X as per the algorithm used
+    """
+    return np.array(random.sample(X, n_clusters))
 
 
 def calc_min_dissim(X, centroids):
@@ -9,15 +20,15 @@ def calc_min_dissim(X, centroids):
     for ii in range(centroids.shape[0]):
         for jj in range(centroids.shape[1]):
             if X[jj] != centroids[ii, jj]:
-                # dissimilarity[ii] += abs(X[jj] - centroids[ii, jj])
                 dissimilarity[ii] += 1
     return min(enumerate(dissimilarity), key=operator.itemgetter(1))[0]
 
 
-def update_centroids(X, belongs, centroids):
+def update_centroids(X, belongs, centroid):
+    centroids = copy.deepcopy(centroid)
     n_centroids = centroids.shape[0]
     for ii in range(n_centroids):
-        points = np.array([X[jj, :] for jj in range(belongs.shape[0]) if belongs[jj] == ii])
+        points = np.array([X[jj, :] for jj in range(X.shape[0]) if belongs[jj] == ii])
         for kk in range(points.shape[1]):
             temp_points = [points[jj, kk] for jj in range(points.shape[0])]
             count = Counter(temp_points)
@@ -28,7 +39,9 @@ def update_centroids(X, belongs, centroids):
 def kmodes(X, n_clusters=8, max_iter=100, debug=True):
 
     # Chooses random cluster centers
-    cluster_centers = np.array(random.sample(X, n_clusters))
+    cluster_centers = initialize_centroids(X, n_clusters)
+    init = copy.deepcopy(cluster_centers)
+
     if debug:
         print "Initial centroids:"
         print cluster_centers
@@ -65,10 +78,12 @@ def calculate_accuracy(labels, prediction):
 
 if __name__ == "__main__":
     # Importing data from dataset and reformatting into attributes and labels
-    x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-    y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+    # x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+    # y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+    x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+    y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 
-    centroids, y_test = kmodes(x, 4, 100)
+    centroids, y_test = kmodes(x, 7, 100)
 
     print "|-------------------------------------------------|"
     print "Centroids:"
