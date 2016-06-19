@@ -1,17 +1,22 @@
 import numpy as np
-import random
 import operator
 from collections import Counter
 from time import time
+import kmodes as km
+import random
 
 
 def initialize_centroids(X, n_clusters=4):
     """
-    Performs selection of initial centroids (Random as of now)
+    Performs selection of initial centroids (From random as of now)
     :param X: The dataset of points to choose from
     :param n_clusters: number of initial points to choose and return
     :return: n_clusters initial points selected from X as per the algorithm used
     """
+
+    # centroids, belongs_to = km.kmodes(X, n_clusters, debug=False)
+
+    # return centroids
     return np.array(random.sample(X, n_clusters))
 
 
@@ -144,24 +149,21 @@ def calculate_db_index(X, Y, Z):
         points = [X[i] for i in range(len(Y)) if Y[i] - 1 == ii]
         distance = 0
 
-        # Test stuff
-        if points.__len__() == 0:
-            print "Found!"
-            for jj in range(X.shape[0]):
-                if calculate_dissimilarity(X[jj], centroid) == 0:
-                    print X[jj], "is allotted to cluster:", Y[jj] - 1, "instead of", ii
-
         for jj in points:
             distance += calculate_dissimilarity(centroid, jj)
-        dist_i.append(distance * 1.0 / len(points))
+
+        if len(points) == 0:
+            dist_i.append(0.0)
+        else:
+            dist_i.append(round(distance * 1.0 / len(points), 4))
 
     D_ij = []
 
     for ii in range(k):
         D_i = []
         for jj in range(k):
-            if ii == jj:
-                D_i.append(0)
+            if ii == jj or calculate_dissimilarity(Z[ii], Z[jj]) == 0:
+                D_i.append(0.0)
             else:
                 D_i .append((dist_i[ii] + dist_i[jj]) * 1.0 / calculate_dissimilarity(Z[ii], Z[jj]))
         D_ij.append(D_i)
@@ -262,7 +264,6 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     cost = []
     accuracy = []
     db_indexes = []
-
 
     for ii in range(n_iter):
         comp_time_temp, f_new, Z, W, acc, db_index = fuzzy_kmodes(x, y, n_clusters, alpha)
