@@ -4,6 +4,7 @@ from collections import Counter
 from time import time
 import kmodes as km
 import random
+from metrics import calculate_db_index
 
 
 def initialize_centroids(X, n_clusters=4):
@@ -137,46 +138,6 @@ def calculate_centroids(W, X, alpha):
             Z[l][j] = max(weights, key=operator.itemgetter(1))[0]
 
     return Z
-
-
-def calculate_db_index(X, Y, Z):
-    k = Z.__len__()
-
-    dist_i = []
-
-    for ii in range(k):
-        centroid = Z[ii]
-        points = [X[i] for i in range(len(Y)) if Y[i] - 1 == ii]
-        distance = 0
-
-        for jj in points:
-            distance += calculate_dissimilarity(centroid, jj)
-
-        if len(points) == 0:
-            dist_i.append(0.0)
-        else:
-            dist_i.append(round(distance * 1.0 / len(points), 4))
-
-    D_ij = []
-
-    for ii in range(k):
-        D_i = []
-        for jj in range(k):
-            if ii == jj or calculate_dissimilarity(Z[ii], Z[jj]) == 0:
-                D_i.append(0.0)
-            else:
-                D_i .append((dist_i[ii] + dist_i[jj]) * 1.0 / calculate_dissimilarity(Z[ii], Z[jj]))
-        D_ij.append(D_i)
-
-    db_index = 0
-
-    for ii in range(k):
-        db_index += max(D_ij[ii])
-
-    db_index *= 1.0
-    db_index /= k
-
-    return db_index
 
 
 def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
