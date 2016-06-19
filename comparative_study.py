@@ -3,7 +3,7 @@ import intuition_yager
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.arange(1.1, 3, 0.4)
+x = np.arange(1.1, 7, 0.2)
 
 y_fuzzy_accuracy = np.zeros((x.shape[0]), dtype='float')
 y_fuzzy_db = np.zeros((x.shape[0]), dtype='float')
