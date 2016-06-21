@@ -2,8 +2,8 @@ import numpy as np
 import operator
 from collections import Counter
 from time import time
-import kmodes as km
 import random
+import copy
 from metrics import calculate_db_index, calculate_dunn_index
 
 
@@ -128,7 +128,7 @@ def calculate_centroids(W, X, alpha):
     return Z
 
 
-def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
+def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1, centroids=None):
     """
     Calculates the optimal cost, cluster centers and fuzzy partition matrix for the given dataset.
     :param X: Dataset
@@ -138,9 +138,10 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
     """
     t0 = time()
 
-    Z = initialize_centroids(X, n_clusters)
-
-    init = [Z]
+    if centroids is None:
+        Z = initialize_centroids(X, n_clusters)
+    else:
+        Z = centroids
 
     W = calculate_partition_matrix(Z, X, alpha)
 
@@ -150,8 +151,6 @@ def fuzzy_kmodes(X, Y, n_clusters=4, alpha=1.1):
 
     while True:
         Z = calculate_centroids(W, X, alpha)
-
-        init.append(Z)
 
         f_new = calculate_cost(W, Z, X, alpha)
 
@@ -212,13 +211,17 @@ def calculate_accuracy(labels, prediction):
     return round(count / len(prediction), 4) * 100
 
 
-def run(n_iter=100, n_clusters=4, alpha=1.1):
+def run(n_iter=100, n_clusters=4, alpha=1.1, centroids=None, X=None, Y=None):
 
-    # Importing data from data set and reformatting into attributes and labels
-    # x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-    # y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
-    x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
-    y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
+    if centroids is not None:
+        x = copy.deepcopy(X)
+        y = copy.deepcopy(Y)
+    else:
+        # Importing data from data set and reformatting into attributes and labels
+        # x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+        # y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+        x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+        y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 
     comp_time = []
     cost = []
@@ -227,7 +230,7 @@ def run(n_iter=100, n_clusters=4, alpha=1.1):
     dunn_indexes = []
 
     for ii in range(n_iter):
-        comp_time_temp, f_new, Z, W, acc, db_index, dunn_index = fuzzy_kmodes(x, y, n_clusters, alpha)
+        comp_time_temp, f_new, Z, W, acc, db_index, dunn_index = fuzzy_kmodes(x, y, n_clusters, alpha, centroids)
         comp_time.append(comp_time_temp)
         cost.append(f_new)
         accuracy.append(acc)
