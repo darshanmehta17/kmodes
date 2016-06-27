@@ -96,7 +96,7 @@ def calculate_partition_matrix(Z, X, alpha):
                 if not flag:
                     W[l][i] = 1 / sum
 
-    delta = 3.2
+    delta = 1.7
 
     K = np.copy(W)
 
@@ -219,10 +219,10 @@ def run(n_iter=100, n_clusters=4, alpha=1.1, centroids=None, X=None, Y=None):
         y = copy.deepcopy(Y)
     else:
         # Importing data from data set and reformatting into attributes and labels
-        # x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-        # y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
-        x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
-        y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
+        x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+        y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+        # x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+        # y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 
     comp_time = []
     cost = []
@@ -251,7 +251,7 @@ if __name__ == "__main__":
     n_iter = 100
 
     # Number of clusters
-    n_clusters = 7
+    n_clusters = 4
 
     # Weighing exponent
     alpha = 1.1

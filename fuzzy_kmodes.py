@@ -249,7 +249,7 @@ if __name__ == "__main__":
     n_iter = 100
 
     # Number of clusters
-    n_clusters = 7
+    n_clusters = 4
 
     # Weighing exponent
     alpha = 1.1

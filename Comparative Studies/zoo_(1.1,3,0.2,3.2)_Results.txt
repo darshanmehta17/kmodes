@@ -1,0 +1,14 @@
+######### Average Accuracy #########
+Fuzzy k-modes: 77.527
+Intuitionistic Fuzzy k-modes: 80.299
+
+######### Average DB Index #########
+Fuzzy k-modes: 1.46197438435
+Intuitionistic Fuzzy k-modes: 1.29381210204
+
+######### Average Dunn Index #########
+Fuzzy k-modes: 0.459803478648
+Intuitionistic Fuzzy k-modes: 0.638929104911
+
+Number of iterations: 50
+Number of clusters: 4
