@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4880a7-dfa8-4863-93d1-c9a6ba985cb8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comparative_study.py" afterPath="$PROJECT_DIR$/comparative_study.py" />
     </list>
     <ignored path="kmodes.iws" />
@@ -17,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/kmodes$comparative_study.coverage" NAME="comparative_study Coverage Results" MODIFIED="1467035687079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kmodes$comparative_study.coverage" NAME="comparative_study Coverage Results" MODIFIED="1467035881026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kmodes$kmodes.coverage" NAME="kmodes Coverage Results" MODIFIED="1466318246036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kmodes$fuzzy_kmodes.coverage" NAME="fuzzy_kmodes Coverage Results" MODIFIED="1467028642963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kmodes$intuitionistic_fuzzy_kmodes.coverage" NAME="intuitionistic_fuzzy_kmodes Coverage Results" MODIFIED="1465704640991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -43,11 +42,11 @@
       <file leaf-file-name="comparative_study.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/comparative_study.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-435">
-              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+            <state relative-caret-position="90">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1467035153000" expanded="true" signature="240:2830" ph="..." />
+                <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
               </folding>
             </state>
           </provider>
@@ -161,8 +160,8 @@
         <option value="$PROJECT_DIR$/metrics.py" />
         <option value="$PROJECT_DIR$/credit.csv" />
         <option value="$PROJECT_DIR$/fuzzy_kmodes.py" />
-        <option value="$PROJECT_DIR$/comparative_study.py" />
         <option value="$PROJECT_DIR$/intuition_yager.py" />
+        <option value="$PROJECT_DIR$/comparative_study.py" />
       </list>
     </option>
   </component>
@@ -573,7 +572,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58196723" sideWeight="0.48707592" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46038252" sideWeight="0.5129241" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46038252" sideWeight="0.5129241" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -673,7 +672,7 @@
           <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035153000" expanded="true" signature="240:2830" ph="..." />
+            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
           </folding>
         </state>
       </provider>
@@ -698,7 +697,7 @@
           <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035153000" expanded="true" signature="240:2830" ph="..." />
+            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
           </folding>
         </state>
       </provider>
@@ -723,7 +722,7 @@
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035153000" expanded="true" signature="240:2830" ph="..." />
+            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1062,11 +1061,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/comparative_study.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-435">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="90">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035153000" expanded="true" signature="240:2830" ph="..." />
+            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
           </folding>
         </state>
       </provider>
