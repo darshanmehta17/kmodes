@@ -4,13 +4,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-alphas = np.arange(1.1, 3.0, 0.2)
+alphas = np.arange(1.1, 3, 0.2)
+
+# bar graph variables
+alphas_length = len(alphas)
+bar_width = 0.3
+ind = np.arange(alphas_length)
+
 
 # Importing data from data set and reformatting into attributes and labels
-# x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
-# y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
-x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
-y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
+x = np.genfromtxt('soybean.csv', dtype=str, delimiter=',')[:, :-1]
+y = np.genfromtxt('soybean.csv', dtype=str, delimiter=',', usecols=(21,))
+# x = np.genfromtxt('zoo.csv', dtype=str, delimiter=',')[:, :-1]
+# y = np.genfromtxt('zoo.csv', dtype=str, delimiter=',', usecols=(17,))
 # x = np.genfromtxt('saturday.csv', dtype=str, delimiter=',')[:, :-1]
 # y = np.genfromtxt('saturday.csv', dtype=str, delimiter=',', usecols=(4,))
 # x = np.genfromtxt('credit.csv', dtype=str, delimiter=',')[:, :-1]
@@ -28,7 +34,7 @@ y_intuitionistic_dunn = np.zeros((alphas.shape[0]), dtype='float')
 n_iter = 50
 
 # Number of clusters
-n_clusters = 7
+n_clusters = 4
 
 print "######### Starting Iterations ##########"
 print
@@ -62,11 +68,17 @@ print "######### Average Dunn Index #########"
 print "Fuzzy k-modes:", sum(y_fuzzy_dunn) / len(y_fuzzy_dunn)
 print "Intuitionistic Fuzzy k-modes:", sum(y_intuitionistic_dunn) / len(y_intuitionistic_dunn)
 
-
+############### Accuracy Graph
 plt.figure(1)
 ax = plt.subplot(111)
-ax.plot(alphas, y_fuzzy_accuracy, color='r', linestyle='--', label='Fuzzy k-modes')
-ax.plot(alphas, y_intuitionistic_accuracy, color='b', label='Intuitionistic Fuzzy k-modes')
+ax.bar(ind, y_fuzzy_accuracy, bar_width, color='#99ff99', label='Fuzzy k-modes')
+ax.bar(ind + bar_width, y_intuitionistic_accuracy, bar_width, color='blue', label='Intuitionistic Fuzzy k-modes')
+
+ax.set_xlim(-bar_width,len(ind)+bar_width)
+ax.set_xticks(ind+bar_width)
+xtickNames = ax.set_xticklabels(alphas)
+plt.setp(xtickNames, fontsize=10)
+
 plt.xlabel('Alpha')
 plt.ylabel('Accuracy')
 plt.title('Comparative Study - Accuracy')
@@ -80,11 +92,17 @@ ax.set_position([box.x0, box.y0 + box.height * 0.1,
 ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1),
           fancybox=True, shadow=True, ncol=2)
 
-
+############### DB Index Graph
 plt.figure(2)
 ax2 = plt.subplot(111)
-ax2.plot(alphas, y_fuzzy_db, color='r', linestyle='--', label='Fuzzy k-modes')
-ax2.plot(alphas, y_intuitionistic_db, color='b', label='Intuitionistic Fuzzy k-modes')
+ax2.bar(ind, y_fuzzy_db, bar_width, color='#99ff99', label='Fuzzy k-modes')
+ax2.bar(ind + bar_width, y_intuitionistic_db, bar_width, color='blue', label='Intuitionistic Fuzzy k-modes')
+
+ax2.set_xlim(-bar_width,len(ind)+bar_width)
+ax2.set_xticks(ind+bar_width)
+xtickNames = ax2.set_xticklabels(alphas)
+plt.setp(xtickNames, fontsize=10)
+
 plt.xlabel('Alpha')
 plt.ylabel('DB Index')
 plt.title('Comparative Study - DB Index')
@@ -97,10 +115,17 @@ ax2.set_position([box.x0, box.y0 + box.height * 0.1,
 ax2.legend(loc='upper center', bbox_to_anchor=(0.5, -0.1),
           fancybox=True, shadow=True, ncol=2)
 
+############### Dunn Graph
 plt.figure(3)
 ax2 = plt.subplot(111)
-ax2.plot(alphas, y_fuzzy_dunn, color='r', linestyle='--', label='Fuzzy k-modes')
-ax2.plot(alphas, y_intuitionistic_dunn, color='b', label='Intuitionistic Fuzzy k-modes')
+ax2.bar(ind, y_fuzzy_dunn, bar_width, color='#99ff99', label='Fuzzy k-modes')
+ax2.bar(ind + bar_width, y_intuitionistic_dunn, bar_width, color='blue', label='Intuitionistic Fuzzy k-modes')
+
+ax2.set_xlim(-bar_width,len(ind)+bar_width)
+ax2.set_xticks(ind+bar_width)
+xtickNames = ax2.set_xticklabels(alphas)
+plt.setp(xtickNames, fontsize=10)
+
 plt.xlabel('Alpha')
 plt.ylabel('Dunn Index')
 plt.title('Comparative Study - Dunn Index')
