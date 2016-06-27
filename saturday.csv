@@ -1,0 +1,14 @@
+sunny,hot,high,f,n
+sunny,hot,high,t,n
+overcast,hot,high,f,p
+rain,mild,high,f,p
+rain,cool,normal,f,p
+rain,cool,normal,t,n
+overcast,cool,normal,t,p
+sunny,mild,high,f,n
+sunny,cool,normal,f,p
+rain,mild,normal,f,p
+sunny,mild,normal,t,p
+overcast,mild,high,t,p
+overcast,hot,normal,f,p
+rain,mild,high,t,n
