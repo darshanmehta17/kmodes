@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4880a7-dfa8-4863-93d1-c9a6ba985cb8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comparative_study.py" afterPath="$PROJECT_DIR$/comparative_study.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intuition_yager.py" afterPath="$PROJECT_DIR$/intuition_yager.py" />
     </list>
     <ignored path="kmodes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +18,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/kmodes$comparative_study.coverage" NAME="comparative_study Coverage Results" MODIFIED="1467035881026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/kmodes$comparative_study.coverage" NAME="comparative_study Coverage Results" MODIFIED="1467112984942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kmodes$kmodes.coverage" NAME="kmodes Coverage Results" MODIFIED="1466318246036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kmodes$fuzzy_kmodes.coverage" NAME="fuzzy_kmodes Coverage Results" MODIFIED="1467028642963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/kmodes$intuitionistic_fuzzy_kmodes.coverage" NAME="intuitionistic_fuzzy_kmodes Coverage Results" MODIFIED="1465704640991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -42,11 +44,11 @@
       <file leaf-file-name="comparative_study.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/comparative_study.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="510">
+              <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
+                <marker date="1467112984000" expanded="true" signature="240:2871" ph="..." />
               </folding>
             </state>
           </provider>
@@ -55,8 +57,8 @@
       <file leaf-file-name="intuition_yager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/intuition_yager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+            <state relative-caret-position="254">
+              <caret line="98" column="15" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
               <folding>
                 <element signature="e#225#648#0" expanded="false" />
                 <element signature="e#225#505#1" expanded="false" />
@@ -160,6 +162,7 @@
         <option value="$PROJECT_DIR$/metrics.py" />
         <option value="$PROJECT_DIR$/credit.csv" />
         <option value="$PROJECT_DIR$/fuzzy_kmodes.py" />
+        <option value="$USER_HOME$/Desktop/Results/soybean_(1.1,3,0.2,1.7)_Results.txt" />
         <option value="$PROJECT_DIR$/intuition_yager.py" />
         <option value="$PROJECT_DIR$/comparative_study.py" />
       </list>
@@ -202,14 +205,7 @@
     <panes>
       <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kmodes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="Scratches" />
     </panes>
@@ -564,15 +560,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21001616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21324718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58196723" sideWeight="0.48707592" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46038252" sideWeight="0.5129241" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46038252" sideWeight="0.5129241" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -645,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fuzzy_kmodes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zoo.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -672,7 +661,7 @@
           <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
+            <marker date="1467112984000" expanded="true" signature="240:2871" ph="..." />
           </folding>
         </state>
       </provider>
@@ -697,7 +686,7 @@
           <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
+            <marker date="1467112984000" expanded="true" signature="240:2871" ph="..." />
           </folding>
         </state>
       </provider>
@@ -722,7 +711,7 @@
           <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
+            <marker date="1467112984000" expanded="true" signature="240:2871" ph="..." />
           </folding>
         </state>
       </provider>
@@ -978,6 +967,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/Results/soybean_(1.1,3,0.2,1.7)_Results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intuition_yager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="98" column="15" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
+          <folding>
+            <element signature="e#225#648#0" expanded="false" />
+            <element signature="e#225#505#1" expanded="false" />
+            <element signature="e#511#574#0" expanded="false" />
+            <element signature="e#690#1050#0" expanded="false" />
+            <element signature="e#690#909#1" expanded="false" />
+            <element signature="e#979#1025#0" expanded="false" />
+            <element signature="e#1093#1577#0" expanded="false" />
+            <element signature="e#1093#1379#1" expanded="false" />
+            <element signature="e#1464#1560#0" expanded="false" />
+            <element signature="e#1629#1918#1" expanded="false" />
+            <element signature="e#2059#2620#0" expanded="false" />
+            <element signature="e#2090#2620#0" expanded="false" />
+            <element signature="e#2219#2620#0" expanded="false" />
+            <element signature="e#2311#2552#0" expanded="false" />
+            <element signature="e#2422#2499#0" expanded="false" />
+            <element signature="e#2791#3614#0" expanded="false" />
+            <element signature="e#2791#3048#1" expanded="false" />
+            <element signature="e#3159#3600#0" expanded="false" />
+            <element signature="e#3190#3600#0" expanded="false" />
+            <element signature="e#3323#3534#0" expanded="false" />
+            <element signature="e#3701#4818#0" expanded="false" />
+            <element signature="e#3701#3932#1" expanded="false" />
+            <element signature="e#4189#4489#0" expanded="false" />
+            <element signature="e#4861#5167#0" expanded="false" />
+            <element signature="e#4861#5014#1" expanded="false" />
+            <element signature="e#5218#5529#0" expanded="false" />
+            <element signature="e#5318#5477#0" expanded="false" />
+            <element signature="e#5615#6732#0" expanded="false" />
+            <element signature="e#5649#5698#0" expanded="false" />
+            <element signature="e#5717#6101#0" expanded="false" />
+            <element signature="e#5957#6021#0" expanded="false" />
+            <element signature="e#6234#6527#0" expanded="false" />
+            <element signature="e#6767#7490#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fuzzy_kmodes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
@@ -1017,55 +1055,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intuition_yager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-          <folding>
-            <element signature="e#225#648#0" expanded="false" />
-            <element signature="e#225#505#1" expanded="false" />
-            <element signature="e#511#574#0" expanded="false" />
-            <element signature="e#690#1050#0" expanded="false" />
-            <element signature="e#690#909#1" expanded="false" />
-            <element signature="e#979#1025#0" expanded="false" />
-            <element signature="e#1093#1577#0" expanded="false" />
-            <element signature="e#1093#1379#1" expanded="false" />
-            <element signature="e#1464#1560#0" expanded="false" />
-            <element signature="e#1629#1918#1" expanded="false" />
-            <element signature="e#2059#2620#0" expanded="false" />
-            <element signature="e#2090#2620#0" expanded="false" />
-            <element signature="e#2219#2620#0" expanded="false" />
-            <element signature="e#2311#2552#0" expanded="false" />
-            <element signature="e#2422#2499#0" expanded="false" />
-            <element signature="e#2791#3614#0" expanded="false" />
-            <element signature="e#2791#3048#1" expanded="false" />
-            <element signature="e#3159#3600#0" expanded="false" />
-            <element signature="e#3190#3600#0" expanded="false" />
-            <element signature="e#3323#3534#0" expanded="false" />
-            <element signature="e#3701#4818#0" expanded="false" />
-            <element signature="e#3701#3932#1" expanded="false" />
-            <element signature="e#4189#4489#0" expanded="false" />
-            <element signature="e#4861#5167#0" expanded="false" />
-            <element signature="e#4861#5014#1" expanded="false" />
-            <element signature="e#5218#5529#0" expanded="false" />
-            <element signature="e#5318#5477#0" expanded="false" />
-            <element signature="e#5615#6732#0" expanded="false" />
-            <element signature="e#5649#5698#0" expanded="false" />
-            <element signature="e#5717#6101#0" expanded="false" />
-            <element signature="e#5957#6021#0" expanded="false" />
-            <element signature="e#6234#6527#0" expanded="false" />
-            <element signature="e#6767#7490#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comparative_study.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        <state relative-caret-position="510">
+          <caret line="36" column="14" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1467035881000" expanded="true" signature="240:2870" ph="..." />
+            <marker date="1467112984000" expanded="true" signature="240:2871" ph="..." />
           </folding>
         </state>
       </provider>

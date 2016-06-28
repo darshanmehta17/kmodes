@@ -31,7 +31,7 @@ y_intuitionistic_db = np.zeros((alphas.shape[0]), dtype='float')
 y_intuitionistic_dunn = np.zeros((alphas.shape[0]), dtype='float')
 
 # Number of iterations
-n_iter = 50
+n_iter = 100
 
 # Number of clusters
 n_clusters = 7

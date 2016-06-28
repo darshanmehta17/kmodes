@@ -96,7 +96,7 @@ def calculate_partition_matrix(Z, X, alpha):
                 if not flag:
                     W[l][i] = 1 / sum
 
-    delta = 1.7
+    delta = 3.2
 
     K = np.copy(W)
 
